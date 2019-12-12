@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Olga-zadanie7", "Olga-zadanie7\Olga-zadanie7.vcxproj", "{05697F4A-2D59-4BBC-94E0-76FEC3CAFABB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05697F4A-2D59-4BBC-94E0-76FEC3CAFABB}.Debug|x64.ActiveCfg = Debug|x64
+		{05697F4A-2D59-4BBC-94E0-76FEC3CAFABB}.Debug|x64.Build.0 = Debug|x64
+		{05697F4A-2D59-4BBC-94E0-76FEC3CAFABB}.Debug|x86.ActiveCfg = Debug|Win32
+		{05697F4A-2D59-4BBC-94E0-76FEC3CAFABB}.Debug|x86.Build.0 = Debug|Win32
+		{05697F4A-2D59-4BBC-94E0-76FEC3CAFABB}.Release|x64.ActiveCfg = Release|x64
+		{05697F4A-2D59-4BBC-94E0-76FEC3CAFABB}.Release|x64.Build.0 = Release|x64
+		{05697F4A-2D59-4BBC-94E0-76FEC3CAFABB}.Release|x86.ActiveCfg = Release|Win32
+		{05697F4A-2D59-4BBC-94E0-76FEC3CAFABB}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DA86FC67-F72C-4D7A-A00B-3E1AD6DE33B6}
+	EndGlobalSection
+EndGlobal
