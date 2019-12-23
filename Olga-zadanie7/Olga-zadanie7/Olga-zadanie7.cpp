@@ -25,10 +25,10 @@ int main()
 {
 	//przestrzeń lokalna (local scope) funkcji main
 	bool example = true;
-	if (example)
+	if (!example)
 	{
 		//przestrzeń lokalna powyższego ifa
-		int current_example = 1;
+		int current_example = 4;
 
 		/*PRZYKŁAD 7.1*/
 		/*Pierwsza, prosta funkcja*/
@@ -44,8 +44,12 @@ int main()
 			//Po drodze w tym pliku umieszczę kilka różnych oznaczeń przestrzeni.
 			//Funkcję można użyć tylko po tym (w linijkach następujących), jak została zadeklarowana.
 			//Dlatego funkcja add() została stworzona przed funkcją main()
+			int x = 4;
+			int y = 7;
 
-			std::cout << add(4, 6) << '\n';  //wykorzystanie własnej funkcji
+			std::cin >> x;
+			std::cin >> y;
+			std::cout << add(x, y) << '\n';  //wykorzystanie własnej funkcji
 		}
 		/*KONIEC PRZYK£AD 7.1*/
 		else if (current_example == 2)
@@ -71,8 +75,8 @@ int main()
 			//funkcja każdego typu poza void musi zwracać jakaś wartość przy pomocy operatora return
 			//void to funkcja wykonująca czynność, nie zwraca wartości
 			//tak jak funkcja print_line() zadeklarowana powyżej
-
-			print_line("Linia pierwsza.");
+			
+			print_line("stringy_string");
 			print_line("Linia druga.");
 		}
 		/*KONIEC PRZYK£AD 7.3*/
@@ -85,7 +89,7 @@ int main()
 			//czyli zadeklarowana powyżej quadratic_value()
 
 			//możesz się pobawić wartościami tych zmiennych
-			int _a = 1;
+			int _a = 5;
 			int _b = 2;
 			int _c = 5;
 
@@ -136,7 +140,7 @@ int main()
 			float liczba_dwa = 0;
 			int u_input = 0;
 			float suma = 0;
-			bool rigth_try = false;
+			bool right_try = false;
 			bool false_try = true;
 
 			std::cout << "1. Dodawanie" << "\n\n";
@@ -159,7 +163,7 @@ int main()
 
 				if (u_input == 1 || u_input == 2 || u_input == 3 || u_input == 4 || u_input == 5)
 				{
-					rigth_try = true;
+					right_try = true;
 				}
 
 				else if (false_try)
@@ -167,7 +171,7 @@ int main()
 					false_try = false;
 				}
 
-			} while (rigth_try == false);
+			} while (right_try == false);
 			//koniec oznaczonego fragmentu kodu
 
 			if (u_input == 5)
@@ -200,24 +204,29 @@ int main()
 				break;
 
 			case 3:
+
+				right_try = false;
+
 				do
 				{
 					if (false_try)
 					{
-						std::cout << "Przepraszam, ale nie mozna dzielic przez 0";
+						std::cout << "Przepraszam, ale nie mozna dzielic przez 0, sprobuj jeszcze raz \n\n";
+						std::cin >> liczba_dwa;
+						std::cout << "\n\n";
 					}
 
 					if (liczba_dwa != 0)
 					{
 						suma = liczba_jeden / liczba_dwa;
 						std::cout << "Twoj wynik wynosi: " << suma << "\n\n";
-						rigth_try = true;
+						right_try = true;
 					}
 					else if (liczba_dwa == 0)
 					{
 						false_try = false;
 					}
-				} while (rigth_try == false);
+				} while (right_try == false);
 				break;
 
 			case 4:
