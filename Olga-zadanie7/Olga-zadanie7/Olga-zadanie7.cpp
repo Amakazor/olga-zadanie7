@@ -5,10 +5,59 @@
 //przestrzeń globalna (global scope) opisana w przykładzie 7.1
 
 //Funkcja do przykładu 7.1
-int add(int a, int b)
+float add(float a, float b)
 {
 	//przestrzeń lokalna (local scope) funkcji add()
 	return a + b;
+}
+
+float substract(float a, float b)
+{
+	return a - b;
+}
+
+float multiply (float a, float b)
+{
+	return a * b;
+}
+
+float divide(float a, float b)
+{
+	return a / b;
+}
+
+int parse_int_min_max(int a, int b)
+{	
+
+	int u_input = 0;
+	bool enter = false;
+	bool exit = true;
+
+	do
+	{
+		if (enter)
+		{
+			std::cout << "Niepoprawna opcja, sprobuj jeszcze raz: \n\n";
+		}
+
+		std::cout << "Podaj prosze numer opcji: \n\n";
+		std::cin >> u_input;
+		std::cout << "\n\n";
+
+		if ((a <= u_input) && (u_input <= b))
+		{
+			exit = false;
+		}
+
+		else
+		{
+			enter = true;
+		}
+
+	} while (exit == true);
+	
+	
+	return u_input;
 }
 
 //Funkcja do przykładu 7.2
@@ -131,6 +180,8 @@ int main()
 	// Nie robi się nieskończona pętla ponieważ używasz tam right_try, które wcześniej ma już przypisane true
 	// Więc jako 5.:
 	// 5. Przyjrzyj się, co nie tak się dzieje w sprawdzeniu błędów dzielenia i napraw to w dowolny sposób
+
+	//check
 	{
 		int iterator = 0;
 
@@ -150,29 +201,9 @@ int main()
 			std::cout << "5. Zakoncz program" << "\n\n";
 
 			//oznaczony fragment kodu do przerobienia na funkcję
-			do
-			{
-				if (!false_try)
-				{
-					std::cout << "Przykro mi, wybrales bledny numer dzialania" << "\n\n";
-				}
-
-				std::cout << "Podaj prosze numer opcji" << "\n\n";
-				std::cin >> u_input;
-				std::cout << "\n\n";
-
-				if (u_input == 1 || u_input == 2 || u_input == 3 || u_input == 4 || u_input == 5)
-				{
-					right_try = true;
-				}
-
-				else if (false_try)
-				{
-					false_try = false;
-				}
-
-			} while (right_try == false);
+			u_input = parse_int_min_max(1,5);
 			//koniec oznaczonego fragmentu kodu
+
 
 			if (u_input == 5)
 			{
@@ -195,43 +226,30 @@ int main()
 			switch (u_input)
 			{
 			case 1:
-				std::cout << "Twoj wynik wynosi: " << add(liczba_jeden, liczba_dwa);
+				std::cout << "Twoj wynik wynosi: " << add(liczba_jeden, liczba_dwa) << "\n\n";
 				break;
 
 			case 2:
-				suma = liczba_jeden - liczba_dwa;
-				std::cout << "Twoj wynik wynosi: " << suma;
+				
+				std::cout << "Twoj wynik wynosi: " << substract(liczba_jeden, liczba_dwa) << "\n\n";
 				break;
 
 			case 3:
-
-				right_try = false;
-
-				do
+				
+				while (liczba_dwa == 0)
 				{
-					if (false_try)
-					{
-						std::cout << "Przepraszam, ale nie mozna dzielic przez 0, sprobuj jeszcze raz \n\n";
-						std::cin >> liczba_dwa;
-						std::cout << "\n\n";
-					}
+					std::cout << "Nie mozna dzielic przez 0 , sprobuj jeszcze raz: \n\n";
+					std::cin >> liczba_dwa;
+					std::cout << "\n\n";
+				}
 
-					if (liczba_dwa != 0)
-					{
-						suma = liczba_jeden / liczba_dwa;
-						std::cout << "Twoj wynik wynosi: " << suma << "\n\n";
-						right_try = true;
-					}
-					else if (liczba_dwa == 0)
-					{
-						false_try = false;
-					}
-				} while (right_try == false);
+				
+				std::cout << "Twoj wynik to: " << divide(liczba_jeden,liczba_dwa) << "\n\n";
 				break;
 
 			case 4:
-				suma = liczba_jeden * liczba_dwa;
-				std::cout << "Twoj wynik wynosi: " << suma;
+				
+				std::cout << "Twoj wynik wynosi: " << multiply(liczba_jeden, liczba_dwa) << "\n\n";
 				break;
 
 			default:
